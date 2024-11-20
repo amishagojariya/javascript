@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+  body{
+    background-color: gray;
+  }
+
+  .result{
+    background-color: #ffffff80;
+    color: black;
+    width: fit-content;
+    padding: 20px;
+    text-align: start ;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 5px;
+    margin: 50px auto;
+    box-shadow: 10px 10px 10px ;
+  }
+
+  form input{
+    padding: 5px;
+    font-weight: 800;
+    
+
+  }
+
+  button{
+    padding: 10px;
+    background-color: gray;
+    font-size: 20px;
+    font-weight: bold;
+
+  }
+
+</style>
+
+<body>
+
+
+  <div class="result">
+       <h2>Marksheet for Information Technology</h2>
+      <h3>Enter Marks</h3>
+
+   <form id="result">
+    <div class="td">
+      <label for="c">1. C Language:</label>
+      <input type="number" id="c" name="c"><br><br>
+
+
+      <label for="cpp">2. C++ Language:</label>
+       <input  type="number" id="cpp" name="cpp"><br><br>
+
+      <label for="db">3. Database:</label>
+      <input type="number" id="db" name="db"><br><br>
+
+     <label for="html">4. HTML:</label>
+
+      <input type="number" id="html" name="html"><br><br>
+
+
+      <label for="css">5. CSS:</label>
+      <input type="number" id="css" name="css"><br><br>
+
+
+     <label for="php">6. php:</label>
+     <input type="number" id="php" name="php"><br><br>
+
+     <label for="java">7. Core Java:</label>
+
+     <input type="number" id="java" name="java"><br> <br>
+
+</div>
+
+    <button type="button" onclick="calculateResult()">Result</button>  
+
+
+</form>
+
+       <p id="result"></p>
+
+</div>
+
+<script>
+function calculateResult() {
+
+   
+  let c = Number(document.getElementById("c").value);
+  let cpp = Number(document.getElementById("cpp").value);
+  let database = Number(document.getElementById("db").value);   
+  let html = Number(document.getElementById("html").value);
+  let css = Number(document.getElementById("css").value);
+  let php = Number(document.getElementById("php").value);
+  let java = Number(document.getElementById("java").value);
+
+
+let total = c + cpp + db + html + css + php + java;
+  let per=(total*100)/350;
+
+
+  document.getElementById("result").innerHTML = `Total is: " + ${total} + /350` ;
+  document.getElementById("result").innerHTML = `percentage is: " + ${per} + %` ;
+ 
+}
+</script>
+
+</body>
+</html>
