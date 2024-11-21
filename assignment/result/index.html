@@ -92,7 +92,8 @@
 
 </form>
 
-       <p id="result"></p>
+       <p > <span id="total"></span></p>
+       <p>   <span id="percentage"></span></p>
 
 </div>
 
@@ -109,13 +110,24 @@ function calculateResult() {
   let java = Number(document.getElementById("java").value);
 
 
-let total = c + cpp + db + html + css + php + java;
-  let per=(total*100)/350;
+// let total = c + cpp + db + html + css + php + java;
+//   let per=(total*100)/350;
 
 
-  document.getElementById("result").innerHTML = `Total is: " + ${total} + /350` ;
-  document.getElementById("result").innerHTML = `percentage is: " + ${per} + %` ;
+//   document.getElementById("result").innerHTML = `Total is: " + ${total} + /350` ;
+//   document.getElementById("result").innerHTML = `percentage is: " + ${per} + %` ;
  
+
+  let total = c + cpp + database + html + css + php + java;
+        console.log(total);
+
+        let per = (total * 100) / 350;
+        console.log(per);
+
+        document.getElementById('total').innerHTML = `Total is: ${total} /350`;
+        document.getElementById(
+          'percentage'
+        ).innerHTML = `percentage is: ${per} %`;
 }
 </script>
 
