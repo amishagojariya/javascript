@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    body {
+      background-color: rgba(0, 0, 255, 0.486);
+    }
+
+    .btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin: 50px auto;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    button {    
+      padding: 10px;
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+      box-shadow: 2px 2px;
+
+    }
+
+    .changeColor {
+      background-color: #58b4f1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="btn">
+    <button onclick="document.body.classList.toggle('changeColor')"> changeColor</button>
+    <p>#58b4f1</p>
+
+  </div>
+
+  <script>
+    const btn = document.querySelector('button');
+  </script>
+</body>
+
+</html>
