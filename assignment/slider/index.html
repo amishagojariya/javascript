@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Slider</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #000000;
+        }
+
+       .slider-box{
+        margin: 50px auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+       }
+
+        .slider {
+            width: 100%;
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+    
+        }
+
+        img {
+           min-width: 100%;
+           height: 500px;
+            object-fit: cover;
+            padding: 50px;
+            border-radius: 10px;
+            outline: 2px solid white;
+           
+        }
+
+        .btn{
+            display: flex;
+            justify-content: space-around;
+        }
+
+        button{
+            height: 50px;
+        background-color: #d89228;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 2px;
+      
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="slider-box">
+        <div class="slider">
+            <img src="https://images.pexels.com/photos/19145341/pexels-photo-19145341/free-photo-of-illuminated-ornaments-in-dark.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="">
+            <img src="https://images.pexels.com/photos/1709038/pexels-photo-1709038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="">
+            <img src="https://images.pexels.com/photos/1213447/pexels-photo-1213447.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="">
+            <img src="https://images.pexels.com/photos/754258/pexels-photo-754258.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="">
+            <img src="https://images.pexels.com/photos/259659/pexels-photo-259659.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="">
+
+        </div>
+        <div class="btn">
+            <button class="prev" onclick="prevSlide()">prev</button>
+            <button class="next" onclick="nextSlide()">next</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.getElementsByTagName('img');
+
+
+        function showSlide(index) {
+
+            if (index >= slides.length) {
+                currentSlide = 0;
+            }
+
+
+            else if (index < 0) {
+                currentSlide = slides.length - 1
+            }
+
+            else {
+                currentSlide = index;
+            }
+
+
+            const slider = document.querySelector('.slider');
+            slider.style.transform = `translateX(${-currentSlide * 100}%)`;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+
+          setInterval(() => {
+            nextSlide();
+          }, 3000);
+    </script>
+</body>
+
+</html>
